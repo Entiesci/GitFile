@@ -107,11 +107,11 @@ bool if_perfectnum(int a) {
 //字符串大小写转换，位移
 //输入(字符串string型,目标字母,目的字母)
 /*实例
-	strlow(s,A,a)  将字符串s中的大写转为小写
-    strlow(s,b,a)  将字符串s中的字母按字母表左移1位
+	change_str(s,A,a)  将字符串s中的大写转为小写
+    change_str(s,b,a)  将字符串s中的字母按字母表左移1位
 */
 //返回字符串string型
-string strlow(string s, char a, char b) {
+string change_str(string s, char a, char b) {
 	for (int i = 0; i < s.size(); i++) {
 		if (a >= 'a')
 			if (s[i] >= a)
@@ -121,5 +121,26 @@ string strlow(string s, char a, char b) {
 			s[i] = s[i] - (a - b);
 	}
 	return s;
+}
+
+//阶乘
+//参数(开始,结尾,间隔)
+int fac_torial(int a, int b, int n) {
+	int sum = 1;
+	for (int i = a; i <= b; i += n) {
+		sum *= i;
+	}
+	return sum;
+}
+
+
+//累加
+//参数(开始,结尾,间隔)
+int fac_plus(int a, int b, int n) {
+	int sum = 0;
+	for (int i = a; i <= b; i += n) {
+		sum += i;
+	}
+	return sum;
 }
 
