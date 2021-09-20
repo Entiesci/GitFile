@@ -26,7 +26,7 @@ https://api.yimian.xyz/img?type=moe&size=1920x1080（EEE。DOG 背景）
 https://img.paulzzh.com/touhou/random（paulzzh  东方project）
 https://api.r10086.com/动漫综合1.php
 
-
+https://acg.toubiec.cn/random.php（APP喵）
 
 输出JSON的
 http://jiuli.xiaoapi.cn/i/pixiv_img.php?key=JiuLiapi
