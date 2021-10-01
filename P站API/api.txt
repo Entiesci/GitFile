@@ -25,21 +25,22 @@ http://119.91.108.170:88/doc/pixiv
 【https://www.yingciyuan.cn/api.php
 【https://www.morenote.top/api/GetRandomImage
 【https://api.mz-moe.cn/img.php（木子）
-https://api.paugram.com/wallpaper/（保罗）
-https://api.btstu.cn/sjbz/api.php?lx=dongman&format=images（搏天）
-https://api.mtyqx.cn/api/random.php（墨天逸）
-https://api.isoyu.com/aipc_animation.php（姬长信）
+= https://api.paugram.com/wallpaper/（保罗）
+【https://api.btstu.cn/sjbz/api.php?lx=dongman&format=images（搏天）
+【https://api.mtyqx.cn/api/random.php（墨天逸）
+= https://api.isoyu.com/aipc_animation.php（姬长信）
 https://www.eee.dog/tech/rand-pic-api.html
 【	https://api.yimian.xyz/img?type=moe（EEE.DOG 动漫）
 	https://api.yimian.xyz/img?type=head（EEE.DOG 头像）
 	https://api.yimian.xyz/img?type=moe&size=1920x1080（EEE。DOG 背景）
+	https://api.yimian.xyz/img?type=wallpaper
 https://img.paulzzh.com/touhou/random（paulzzh  东方project）
 https://img.r10086.com/
 【	https://api.r10086.com/动漫综合1.php
 
 
-https://acg.toubiec.cn/random.php（APP喵）
-https://api.szfx.top/bing/api/
+【https://acg.toubiec.cn/random.php（APP喵）
+【https://api.szfx.top/bing/api/
 
 输出JSON的
 http://jiuli.xiaoapi.cn/i/pixiv_img.php?key=JiuLiapi
