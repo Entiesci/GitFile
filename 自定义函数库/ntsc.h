@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//“有人认为，爱是性，是婚姻，是凌晨六点的吻，是一大堆孩子。橘小姐，你知道我怎么想吗？爱是想要触碰却又收回的手，如同雨落雨止。”
 
 //判断质数
 //返回值,是返回true,不是返回false
@@ -36,7 +37,7 @@ void reverse_char(char i, char j) {
 	if (a[i] == j) {
 		return;
 	} else {
-		reverse_char(i + 1);
+		reverse_char(i + 1, j);
 		cout << a[i];
 	}
 }
@@ -144,3 +145,64 @@ int fac_plus(int a, int b, int n) {
 	return sum;
 }
 
+//大数加法
+//参数(加数,加数,进制(<=10))
+void add(string sa, string sb, int B) {
+	int la = sa.size();
+	int lb = sb.size();
+	int lc = max(la, lb);
+	int a[99999], b[99999], c[99999];
+
+	for (int i = 0; i < la; i++)
+		a[la - i] = sa[i] - '0';
+	for (int i = 0; i < lb; i++)
+		b[lb - i] = sb[i] - '0';
+
+
+	for (int i = 0; i <= lc; i++) //先加
+		c[i] = a[i] + b[i];
+
+	for (int i = 0; i <= lc; i++) { //进位
+		c[i + 1] += c[i] / B;
+		c[i] %= B;
+	}
+
+	if (c[lc + 1] != 0)
+		lc++;
+	while (c[lc] == 0 && lc > 1)
+		lc--;//去前导0
+
+
+	for (int i = lc; i > 0; i--)
+		cout << c[i];
+}
+
+//大数减法
+void jian(string sa, string sb) {
+	int la = sa.size();
+	int lb = sb.size();
+	int lc = max(la, lb);
+	int a[99999], b[99999], c[99999];
+
+	for (int i = 0; i < la; i++)
+		a[la - i] = sa[i] - '0';
+	for (int i = 0; i < lb; i++)
+		b[lb - i] = sb[i] - '0';
+
+
+	for (int i = 0; i <= lc; i++)
+		c[i] = a[i] - b[i];
+
+	for (int i = 0; i <= lc; i++) {
+		if (c[i] < 0) {
+			c[i] += 10;
+			c[i + 1]--;
+		}
+	}
+
+	while (c[lc] == 0 && lc > 1)
+		lc--;
+
+	for (int i = lc; i > 0; i--)
+		cout << c[i];
+}

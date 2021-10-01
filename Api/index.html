@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+	<title>API测试</title>
+	
+	
+	
+	
+	
+	
+	<script>
+		function go(){
+		var num = document.getElementById("pid").value;
+		location.href="https://pixiv.cat/"+num+".jpg"
+		}
+		
+		function bing(){
+		var num = document.getElementById("wd").value;
+		location.href="https://cn.bing.com/search?q="+num+" "
+		}
+		
+		function google(){
+		var num = document.getElementById("wd").value;
+		location.href="https://www.google-fix.com/search?q="+num+" "//123
+		}
+		
+		function three60(){
+		var num = document.getElementById("wd").value;
+		location.href="https://www.so.com/s?ie=utf-8&fr=so.com&src=home_so.com&q="+num+" "
+		}
+		
+		function sogo(){
+		var num = document.getElementById("wd").value;
+		location.href="https://www.sogou.com/web?query="+num+" "
+		}
+	</script>
+</head>
+	
+<body>
+
+<h1>一言</h1>
+	<p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>
+ <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+	
+<h1>搜索</h1>
+	
+     <input type="text" id="wd">
+	<input type="submit" onclick="bing()" value="bing两下">
+	<input type="submit" onclick="baidu()" value="百度一下">
+	<input type="submit" onclick="google()" value="google go!">
+	<input type="submit" onclick="three60()" value="360">
+	<input type="submit" onclick="sogo()" value="搜狗">
+	
+<h1>pixiv</h1>
+	
+	搜索(8nums)：<input type="text" value="搜索画作ID..." id="pid"/><input type="submit" onClick="go()"
+	<br>												 
+	<h2>随机图片</h2>
+	<p>服务已转移，请访问<a href="https://ntsc-yrx.github.io/Menu/Daypixiv/">Day Pixiv</a></p>
+	<a href="https://api.jysafe.cn/pixiv/?color=585858&limit=10">我很固执</a>
+	
+	
+</body>
+</html>
