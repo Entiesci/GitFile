@@ -1,13 +1,23 @@
 pixiv API
 
-https://api.jysafe.cn/pixiv/?color=f00&limit=10
+https://api.jysafe.cn/pixiv/?color=000&limit=10
 https://api.ghser.com/acg.html 
+【	https://api.ghser.com/random/pc.php
+【	https://api.ghser.com/random/pe.php
+【	https://api.ghser.com/random/bg.php
+【	https://api.ghser.com/random/fengjing.php
 https://rainchan.win/projects/pximg
+【	https://pximg.rainchan.win/rawimg
 https://api.skyil.cn/#/
+【	https://api.skyil.cn/random?size=phone
+【	https://api.skyil.cn/random?size=pc
 http://119.91.108.170:88/doc/pixiv
-https://acg.e4a.top/acgurl.php（acg.e4a,top）
-https://api.lyiqk.cn/api（凌一API）
-https://api.dongmanxingkong.com/suijitupian/acg/1080p/index.php（动漫星空）
+【	http://119.91.108.170:88/api/bing
+【	http://119.91.108.170:88/api/img/acg.php
+【	http://119.91.108.170:88/api/pixiv/setu.php?return=img
+【https://acg.e4a.top/acgurl.php（acg.e4a,top）
+18】https://api.lyiqk.cn/api（凌一API）
+！】https://api.dongmanxingkong.com/suijitupian/acg/1080p/index.php（动漫星空）
 https://acg.teas.moe/man/api.php（喵白API）
 https://api.imacroc.cn/acg/（Macro‘s API）
 http://www.dmoe.cc/random.php（龙谷情）
@@ -27,6 +37,7 @@ https://img.paulzzh.com/touhou/random（paulzzh  东方project）
 https://api.r10086.com/动漫综合1.php
 
 https://acg.toubiec.cn/random.php（APP喵）
+https://api.szfx.top/bing/api/
 
 输出JSON的
 http://jiuli.xiaoapi.cn/i/pixiv_img.php?key=JiuLiapi
