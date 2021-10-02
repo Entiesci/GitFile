@@ -33,6 +33,11 @@
 		var num = document.getElementById("wd").value;
 		location.href="https://www.sogou.com/web?query="+num+" "
 		}
+
+		function pic(){
+		var num = document.getElementById("dec").value;
+		location.href="https://api.r10086.com/"+num+"1.php"
+		}
 	</script>
 </head>
 	
@@ -51,9 +56,36 @@
 	<input type="submit" onclick="three60()" value="360">
 	<input type="submit" onclick="sogo()" value="搜狗">
 	
+	
 <h1>pixiv</h1>
 	
-	搜索(8nums)：<input type="text" value="搜索画作ID..." id="pid"/><input type="submit" onClick="go()"
+	搜索(8nums)：<input type="text" value="搜索画作ID..." id="pid"/><input type="submit" onClick="go()">
+	<br><br>
+	按分类搜索<input type="text" id="dec">
+	<input type="submit" onclick="pic()" value="PIC">
+	<br>
+	所有分类:
+	<small>动漫综合
+		火影忍者
+		海贼王
+		进击的巨人
+		从零开始的异世界生活
+		SAO
+		缘之空
+		东方project<br>
+		猫娘<br>
+		风景系列<br>
+		物语系列
+		少女前线
+		明日方舟
+		重装战姬
+		P站系列<br>
+		CG系列
+		守望先锋
+		王者荣耀
+		少女写真<br>
+		随机视频<br>
+		</small>
 	<br>												 
 	<h2>随机图片</h2>
 	<p>服务已转移，请访问<a href="https://ntsc-yrx.github.io/Menu/Daypixiv/">Day Pixiv</a></p>
