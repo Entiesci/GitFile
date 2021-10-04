@@ -83,6 +83,14 @@ void mul_big() {
 
 //大数除法(大数/单精度)
 void div_small(int x) {
+	lc = la;
+	for (int i = 0; i < lc; i++) {
+		c[i] = a[i] / x;
+		a[i + 1] += (a[i] % x) * 10;
+	}
+
+	c[lc] = a[lc] / x;
+	int yu = a[lc] % x;
 
 }
 
