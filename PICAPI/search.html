@@ -206,7 +206,7 @@
   //监听按钮点击事件
 $("#src").click(function() {
 		  var ppid = document.getElementById("ppid").value;
-		  var url = "https://api.ardor.one/illust/"+ppid+""
+		  var url = "//api.ardor.one/illust/"+ppid+""
 		  // 申明一个XMLHttpRequest
 		  var request = new XMLHttpRequest();
 		  // 设置请求方法与路径
@@ -222,7 +222,7 @@ $("#src").click(function() {
 				  //控制台输出
 				  console.log(data);
 				  //选择内容保存
-				  var purl2="https://pixiv.cat/"+ppid+".jpg";
+				  var purl2="//pixiv.cat/"+ppid+".jpg";
 				  //错误信息
 				  //var msg=data.error.user_message;
 				  //document.getElementById("msg").innerHTML=msg;
