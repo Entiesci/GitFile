@@ -136,6 +136,7 @@
 								<li>图片标题：<span id="title"></span></li>
 								<li>图片数量：<span id="nums"></span></li>
 								<li>作者：<span id="user"></span></li>
+								<li>发布日期：<span id="time"></span></li>
 								<br>
 								<div class="fh5co-pricing-table">
 									<h3>简介</h3>
@@ -153,7 +154,8 @@
 								</div>
 								<div class="fh5co-pricing-table">
 									<h3>热门度</h3>
-									收藏，观看
+										<li>收藏：<span id="bkm"></span></li>
+										<li>观看：<span id="view"></span></li>
 								</div>
 							</div>
 						</div>
@@ -224,7 +226,7 @@ $("#src").click(function() {
 				  //控制台输出
 				  console.log(data);
 				  //选择内容保存
-				  var purl2="https:////pixiv.cat/"+ppid+".jpg";
+				  var purl2="https://pixiv.cat/"+ppid+".jpg";
 				  //错误信息
 				  //var msg=data.error.user_message;
 				  //document.getElementById("msg").innerHTML=msg;
@@ -240,12 +242,14 @@ $("#src").click(function() {
 					tags += data.illust.tags[i].name + "<br>";
 				  }
 				  var nums=data.illust.page_count;
+				  var view=data.illust.total_view;
+				  var bkm=data.illust.total_bookmarks;
+				  var time=data.illust.create_date;
 				  
 				  document.getElementById("purl2").innerHTML=purl2;
 				  document.getElementById("purl").innerHTML=purl;
 				  document.getElementById("pic").src = purl2;
 				  document.getElementById("pic2").href = purl2;
-				  //document.getElementById("pic3").href = purl2;
 				  document.getElementById("uid").innerHTML=uid;
 				  document.getElementById("pid").innerHTML=pid;
 				  document.getElementById("title").innerHTML=title;
@@ -253,6 +257,9 @@ $("#src").click(function() {
 				  document.getElementById("user").innerHTML=user;
 				  document.getElementById("tags").innerHTML=tags;
 				  document.getElementById("nums").innerHTML=nums;
+				  document.getElementById("view").innerHTML=view;
+				  document.getElementById("bkm").innerHTML=bkm;
+				  document.getElementById("time").innerHTML=time;
 
 		  }
 	  }
