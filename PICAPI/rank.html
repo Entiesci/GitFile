@@ -7,12 +7,13 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>PIC API - 友情链接</title>
+	<title>PIC API - 排行</title>
 	<link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 
   <!-- 
 	//////////////////////////////////////////////////////
@@ -72,8 +73,8 @@
 		<ul>
 			<li><a href="index.html">主页 / Home</a></li>
 			<li><a href="about.html">关于 / About</a></li>
-			<li class="active"><a href="pricing.html">友链 / Pricing</a></li>
-			<li><a href="contact.html">搜索 / Search</a></li>
+			<li><a href="pricing.html">友链 / Pricing</a></li>
+			<li class="active"><a href="contact.html">搜索 / Search</a></li>
 		</ul>
 		<h3 class="fh5co-lead">Connect with us</h3>
 		<p class="fh5co-social-icons">
@@ -101,60 +102,50 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h2>友情链接</h2>
+					<h2>日榜</h2>
+					
 					<div class="fh5co-spacer fh5co-spacer-sm"></div>
-					<div class="row">
-						<div class="col-md-4">
+						<div class="row">
+						<div class="col-md-12">
 							<div class="fh5co-pricing-table">
-								<h3>DayPixiv</h3>
-								<ul class="fh5co-list-check">
-									<li class="fh5co-include">本家随机二次元图片站</li>
-									
-								</ul>
-								<a href="https://ntsc-yrx.github.io/DayPixiv" class="btn btn-block btn-sm btn-outline">前往</a>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="fh5co-pricing-table">
-								<h3>Ntsc's Blog</h3>
-								<ul class="fh5co-list-check">
-									<li class="fh5co-include">站长的个人博客!</li>
-									
-								</ul>
-								<a href="https://ntsc-yrx.github.io" class="btn btn-block btn-sm btn-primary">前往</a>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="fh5co-pricing-table">
-								<h3>Pixivic</h3>
-								<ul class="fh5co-list-check">
-									<li class="fh5co-include">站长最喜欢的国内P站代理</li>
+								<h3>排行榜</h3>
+								 <br>
+								 <p><iframe src="https://pixiv.meimei.zone/" frameborder="0"  style="width:100%; height:380px;"></iframe></p>
+
+								 <h3>图片详情</h3>
+										<li>请自行搜索图片的PID</li>
+										<li>PID获取方法：将鼠标悬停在图片上，看浏览器左右下角的网址“~/artwork/12345678”后面的数字就是PID</li>
+										<li><a href="search.html">搜索页面</a></li>
 								
-								</ul>
-								<a href="https://pixivic.com" class="btn btn-block btn-sm btn-outline">前往</a>
 							</div>
 						</div>
-					</div>
-					<h2>P.A.实验室</h2><br>
-					<div class="row">
-					<div class="col-md-12">
-						<div class="fh5co-pricing-table">
-							<h3>P.A.Lab</h3>
-									<div class="fh5co-pricing-table">
-										<h3>日榜 / Rank</h3>
-										<a href="rank.html" class="btn btn-block btn-sm btn-outline">前往</a>
-									</div>
-									<div class="fh5co-pricing-table">
-										<h3>搜索+ / Search+</h3>
-										<a href="search.html" class="btn btn-block btn-sm btn-outline">前往</a>
-									</div>
-									
+			
 						</div>
 					</div>
-					</div>
+						</div>
+			
 				</div>
         		
         	</div>
+       </div>
+	</div>
+	<div id="fh5co-main">
+		<div class="container">
+
+			<div class="row">
+
+        <div id="fh5co-board" data-columns>
+
+        	<div class="item">
+        		<div class="animate-box">
+					<p><iframe src="https://pixiv.meimei.zone/" frameborder="0"  style="width:240px; height:380px;"></iframe></p>
+		    		 <!--a id="pi1" class="image-popup fh5co-board-img"><img id="pic1" alt="你要的图片没有啦~ （请检查你输入的PID或在PID后面加上编号如‘ 12345678-2’" class="img-rounded img-responsive"> </a>
+					 --></div>
+        		<div class="fh5co-desc">PID-<span id=p1></span></div>
+        	</div>
+			
+        </div>
+        </div>
        </div>
 	</div>
 
@@ -192,8 +183,59 @@
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
 
-	
 
-	
-	</body>
+<script type="application/javascript">
+  //监听按钮点击事件
+$("#src").click(function() {
+		  var ppid = document.getElementById("ppid").value;
+		  var url = "https://api.ardor.one/illust/"+ppid+""
+		  // 申明一个XMLHttpRequest
+		  var request = new XMLHttpRequest();
+		  // 设置请求方法与路径
+		  request.open("get", url);
+		  // 不发送数据到服务器
+		  request.send(null);
+		  //XHR对象获取到返回信息后执行
+		  request.onload = function () {
+			  // 返回状态为200，即为数据获取成功
+			  if (request.status == 200) {
+				  //将数据保存至data
+				  var data = JSON.parse(request.responseText);
+				  //控制台输出
+				  console.log(data);
+				  //选择内容保存
+				  var purl2="https:////pixiv.cat/"+ppid+".jpg";
+				  //错误信息
+				  //var msg=data.error.user_message;
+				  //document.getElementById("msg").innerHTML=msg;
+
+				  var purl=data.illust.meta_single_page.original_image_url;
+				  var uid=data.illust.user.id;
+				  var pid=data.illust.id;
+				  var title=data.illust.title;
+				  var cap=data.illust.caption; 
+				  var user=data.illust.user.name;
+				  var tags=" ";
+				  for (i = 0; i < data.illust.tags.length; i++) {
+					tags += data.illust.tags[i].name + "<br>";
+				  }
+				  var nums=data.illust.page_count;
+				  
+				  document.getElementById("purl2").innerHTML=purl2;
+				  document.getElementById("purl").innerHTML=purl;
+				  document.getElementById("pic").src = purl2;
+				  document.getElementById("pic2").href = purl2;
+				  //document.getElementById("pic3").href = purl2;
+				  document.getElementById("uid").innerHTML=uid;
+				  document.getElementById("pid").innerHTML=pid;
+				  document.getElementById("title").innerHTML=title;
+				  document.getElementById("cap").innerHTML=cap;
+				  document.getElementById("user").innerHTML=user;
+				  document.getElementById("tags").innerHTML=tags;
+				  document.getElementById("nums").innerHTML=nums;
+
+		  }
+	  }
+})
+</script>
 </html>

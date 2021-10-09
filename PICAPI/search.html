@@ -122,6 +122,7 @@
 							<div class="fh5co-pricing-table">
 								<h3>原图</h3>
 								 <a id="pic2" class="image-popup fh5co-board-img"><img id="pic" alt="你要的图片没有啦~ （请检查你输入的PID或在PID后面加上编号如‘ 12345678-2’" class="img-rounded img-responsive"> </a>
+								<!--br><a id="pic3" download="1.jpg" class="btn btn-block btn-sm btn-primary">下载原图</a-->
 								 <br>
 								 <h3>网址</h3>
 										<li>图片网址（代理）：<span id="purl2"></span></li>
@@ -151,7 +152,8 @@
 										<li>图片PID：<span id="pid"></span></li>
 								</div>
 								<div class="fh5co-pricing-table">
-									
+									<h3>热门度</h3>
+									收藏，观看
 								</div>
 							</div>
 						</div>
@@ -206,7 +208,7 @@
   //监听按钮点击事件
 $("#src").click(function() {
 		  var ppid = document.getElementById("ppid").value;
-		  var url = "//api.ardor.one/illust/"+ppid+""
+		  var url = "https://api.ardor.one/illust/"+ppid+""
 		  // 申明一个XMLHttpRequest
 		  var request = new XMLHttpRequest();
 		  // 设置请求方法与路径
@@ -222,7 +224,7 @@ $("#src").click(function() {
 				  //控制台输出
 				  console.log(data);
 				  //选择内容保存
-				  var purl2="//pixiv.cat/"+ppid+".jpg";
+				  var purl2="https:////pixiv.cat/"+ppid+".jpg";
 				  //错误信息
 				  //var msg=data.error.user_message;
 				  //document.getElementById("msg").innerHTML=msg;
@@ -243,6 +245,7 @@ $("#src").click(function() {
 				  document.getElementById("purl").innerHTML=purl;
 				  document.getElementById("pic").src = purl2;
 				  document.getElementById("pic2").href = purl2;
+				  //document.getElementById("pic3").href = purl2;
 				  document.getElementById("uid").innerHTML=uid;
 				  document.getElementById("pid").innerHTML=pid;
 				  document.getElementById("title").innerHTML=title;
