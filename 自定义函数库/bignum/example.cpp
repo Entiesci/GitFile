@@ -87,6 +87,7 @@ int main() {
 			res[i + j] += (s1[i] - '0') * (s2[j] - '0');
 		}
 	}
+	//js
 	if (res[0] >= 10)
 		cout << res[0] / 10;
 	for (int i = len1 + len2 - 1; i > 0; i--) {
@@ -95,6 +96,7 @@ int main() {
 			res[i] %= 10;
 		}
 	}
+	//Êä³ö
 	for (int i = 0; i < len1 + len2 - 1; i++) {
 		cout << res[i];
 	}

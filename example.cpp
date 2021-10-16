@@ -1,56 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
-int n, a[10001], mx, nmx, nmxid, ans = 1, flag, flag2;
+long long n, lc;
+int a[222];
 
-void pre() {
-	mx = a[1];
-	a[1] = 0;
-	while (1) {
-		flag = 0;
-		for (int j = 1; j <= n;) {
-			nmxid = -1;
-			nmx = 0;
-			for (int i = j; i <= n; i++) {
-				if (a[i] < mx && nmx < a[i]) {
-					nmx = a[i];
-					nmxid = i;
-				}
-			}
-			if (nmxid > 0) {
-				a[nmxid] = 0;
+void chen() {
+	for (int i = 0; i <= lc; i++) //先加
+		a[i] = a[i] * 2;
 
-			} else {
-				cout << "new ";
-				ans++;
-				for (int i = 1; i <= n; i++) {
-					if (a[i]) {
-						nmxid = i;
-						flag = 1;
-						break;
-					}
-				}
-			}
-			if (flag = 1)
-				break;
-			j = nmxid;
-			mx = a[nmxid];
-		}
-		flag2 = 0;
-		for (int i = 1; i <= n; i++) {
-			if (a[i] != 0)
-				flag2 = 1;
-		}
-		if (flag2 = 0)
-			return;
+	for (int i = 0; i <= lc; i++) { //进位
+		a[i + 1] += a[i] / 10;
+		a[i] %= 10;
+	}
+	if (a[lc + 1] != 0)
+		lc++;
+	while (a[lc] == 0 && lc > 1)
+		lc--;//去前导0
+
+}
+
+void pre(int n) {
+	a[0] = 1;
+	lc = 1;
+	//计算2^(n+1)-2
+	for (int i = 1; i <= n + 1 ; i++) {
+		chen();
+	}
+	a[0] - 2;
+	//借位
+	for (int i = 0; i <= lc; i++) {
+		if (a[i] < 0) {
+			a[i + 1] -= 1;
+			a[i] += 10;
+		} else
+			break;
 	}
 }
 
 int main() {
-	int i = 1;
-	while (cin >> a[i])
-		i++;
+	//freopen("hanoi.in", "r", stdin);
+	//freopen("hanoi.out", "w", stdout);
 
-	pre();
-	cout << ans;
+	cin >> n;
+	pre(n);
+
+	for (int i = 0; i < lc; i++) {
+		cout << a[i];
+	}
 	return 0;
 }
