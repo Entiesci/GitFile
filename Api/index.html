@@ -38,6 +38,16 @@
 		var num = document.getElementById("dec").value;
 		location.href="https://api.r10086.com/"+num+"1.php"
 		}
+
+		function googt(){
+		var num = document.getElementById("tex").value;
+		location.href="https://translate.google.cn/?hl=zh-CN&sl=zh-CN&tl=en&text="+num+"&op=translate"
+		}
+
+		function baidt(){
+		var num = document.getElementById("tex").value;
+		location.href="https://fanyi.baidu.com/?#zh/en/"+num+""
+		}
 	</script>
 </head>
 	
@@ -55,8 +65,49 @@
 	<input type="submit" onclick="google()" value="google go!">
 	<input type="submit" onclick="three60()" value="360">
 	<input type="submit" onclick="sogo()" value="搜狗">
+
+<h1>翻译</h1>
 	
+	<input type="text" id="tex">
+   <input type="submit" onclick="googt()" value="google中英">
+   <input type="submit" onclick="baidt()" value="百度中英">
+	<!-- Controlgroup -->	
+<script>
 	
+	function tran(){
+	var tran = document.getElementsByName("tran").value;
+	var num = document.getElementsById("trat").value;
+	
+	location.href="https://translate.google.cn/?hl=zh-CN&sl=zh-CN&tl=en&text="+num+"&op=translate"
+	}
+
+</script>
+	
+<fieldset>
+	<legend>快捷翻译</legend>
+	<div id="controlgroup">
+		<select id="translate">
+			<option>中-英语</option>
+			<option>中文-日语</option>
+			<option>中文-俄语</option>
+			<option>SUV</option>
+			<option>Luxury</option>
+			<option>Truck</option>
+			<option>Van</option>
+		</select>
+
+		<label for="transmission-standard">谷歌</label>
+		<input type="radio" name="tran" id="transmission-standard">
+
+		<label for="transmission-automatic">百度</label>
+		<input type="radio" name="tran" id="transmission-automatic">
+		<label for="insurance">————翻译内容</label>
+		<input type="text" id="tex">
+		<input type="submit" onclick="googt()" value="翻译">
+	</div>
+</fieldset>
+	
+
 <h1>pixiv</h1>
 	
 	搜索(8nums)：<input type="text" value="搜索画作ID..." id="pid"/><input type="submit" onClick="go()">
