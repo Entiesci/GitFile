@@ -1,0 +1,21 @@
+[
+    {
+        "op": "repeat",
+        "command": [
+            {
+                "op": "rand",
+                "from": "1",
+                "to": "10"
+            }
+        ],
+        "times": "11"
+    },
+    {
+        "op": "rand",
+        "from": "1",
+        "to": "11"
+    },
+    {
+        "op": "el"
+    }
+]
