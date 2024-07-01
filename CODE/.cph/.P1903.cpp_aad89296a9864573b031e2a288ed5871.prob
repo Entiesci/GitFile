@@ -1,1 +1,0 @@
-{"name":"Local: P1903","url":"c:\\Users\\ASUS\\Desktop\\CODE\\P1903.cpp","tests":[{"id":1715690511449,"input":"6 5\n1 2 3 4 5 5\nQ 1 4\nQ 2 6\nR 1 2\nQ 1 4\nQ 2 6","output":"4\n4\n3\n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ASUS\\Desktop\\CODE\\P1903.cpp","group":"local","local":true}
