@@ -1,0 +1,1 @@
+taskkill /F  /FI "IMAGENAME ne explorer.exe" /FI "IMAGENAME ne dwm.exe"
