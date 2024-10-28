@@ -74,6 +74,102 @@ namespace LCA{
 	}
 }using namespace LCA;
 
+
+namespace BIT{
+	int c[N];
+	inline int lowbit(int x){
+		return x&-x;
+	}
+	int query(int x){
+		int res=0;
+		while(x){
+			res+=c[x];
+			x-=lowbit(x);
+		}
+		return res;
+	}
+	void change(int x,int v){
+		while(x<N){
+			c[x]+=v;
+			x+=lowbit(x);
+		}
+	}
+}using namespace BIT;
+
+
+namespace SGT{
+	struct Node{
+		
+	}t[N<<2];
+	int tag[N<<2];
+	
+	Node merge(Node a,Node b){
+		
+	}
+	
+	void pushup(int x){
+		t[x]=merge(t[x<<1],t[x<<1|1]);
+	}
+	
+	void addtag(int x,itn c){
+		
+	}
+	
+	void pushdown(int x){
+		if(tag[x]){
+			addtag(x<<1,tag[x]);
+			addtag(x<<1|1,tag[x]);
+			tag[x]=0;
+		}
+	}
+	
+	void change(int x,int l,int r,int pl,int pr,int v){
+		if(pl<=l&&pr>=r){
+			addtag(x,v);
+			return ;
+		}
+		pushdown(x);
+		int mid=l+r>>1;
+		if(pl<=mid)change(x<<1,l,mid,pl,pr,v);
+		if(pr>mid)change(x<<1|1,mid+1,r,pl,pr,v);
+		pushup(x);
+		
+	}
+	
+	
+	Node query(itn x,int l,int r,int pl,itn pr){
+		if(pl<=l&&pr>=r){
+			return t[x];
+		}
+		pushdown(x);
+		int fl=0,fr=0;
+		Node nl,nr;
+		int mid=l+r>>1;
+		if(pl<=mid)fl=1,nl=query(x<<1,l,mid,pl,pr);
+		if(pr>mid)fr=1,nr=query(x<<1|1,mid+1,r,pl,pr);
+		if(fl+fr==1){
+			if(fl)return nl;
+			return nr;
+		}
+		return merge(nl,nr);
+	}
+	
+	
+	void build(itn x,int l,int r){
+		if(l==r){
+			
+			return ;
+		}
+		int mid=l+r>>1;
+		build(x<<1,l,mid);
+		build(x<<1|1,mid+1,r);
+		pushup(x);
+	}
+}using namespace SGT;
+
+
+
+
 namespace UNI{
 	int pa[N];
 	
